@@ -391,7 +391,7 @@
         "kind": 6,
         "importPath": "app.core.management.commands.wait_for_db",
         "description": "app.core.management.commands.wait_for_db",
-        "peekOfCode": "class Command(BaseCommand):\n    \"\"\"Django command to wait for database.\"\"\"\n    def handle(self, *args, **options):\n        \"\"\"Entrypoint for command.\"\"\"\n        self.stdout.write('Waiting for database...')\n        db_up = False\n        while db_up is False:\n            try:\n                self.check(databases=['default'])\n                db_up = True",
+        "peekOfCode": "class Command(BaseCommand):\n    def handle(self, *args, **options):\n        self.stdout.write('Waiting for database...')\n        db_up = False\n        while db_up is False:\n            try:\n                self.check(databases=['default'])\n                db_up = True\n            except (Psycopg2OpError, OperationalError):\n                self.stdout.write('Database unavailable, waiting 1 second...')",
         "detail": "app.core.management.commands.wait_for_db",
         "documentation": {}
     },
