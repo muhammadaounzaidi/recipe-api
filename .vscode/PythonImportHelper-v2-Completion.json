@@ -65,6 +65,14 @@
         "documentation": {}
     },
     {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "calc",
         "importPath": "app",
         "description": "app",
@@ -131,6 +139,22 @@
     },
     {
         "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -259,6 +283,22 @@
         "documentation": {}
     },
     {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
         "label": "patch",
         "importPath": "unittest.mock",
         "description": "unittest.mock",
@@ -340,11 +380,59 @@
         "documentation": {}
     },
     {
+        "label": "APIClient",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
+        "isExtraImport": true,
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "generics",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "views",
+        "importPath": "user",
+        "description": "user",
+        "isExtraImport": true,
+        "detail": "user",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "importPath": "user.serializer",
+        "description": "user.serializer",
+        "isExtraImport": true,
+        "detail": "user.serializer",
         "documentation": {}
     },
     {
@@ -568,7 +656,7 @@
         "kind": 5,
         "importPath": "app.app.urls",
         "description": "app.app.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),\n    path(\n        'api/docs/',\n        SpectacularSwaggerView.as_view(url_name='api-schema'),\n        name='api-docs',\n    ),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),\n    path(\n        'api/docs/',\n        SpectacularSwaggerView.as_view(url_name='api-schema'),\n        name='api-docs',\n    ),\n    path('api/user/', include('user.urls')),\n]",
         "detail": "app.app.urls",
         "documentation": {}
     },
@@ -663,12 +751,57 @@
         "documentation": {}
     },
     {
+        "label": "PublicUserApiTests",
+        "kind": 6,
+        "importPath": "app.user.tests.test_user_api",
+        "description": "app.user.tests.test_user_api",
+        "peekOfCode": "class PublicUserApiTests(TestCase):\n    \"\"\"Test the public features of the user API.\"\"\"\n    def setUp(self):\n        self.client = APIClient()\n    def test_create_user_success(self):\n        \"\"\"Test creating a user is successful.\"\"\"\n        payload = {\n            'email': 'test@example.com',\n            'password': 'testpass123',\n            'name': 'Test Name',",
+        "detail": "app.user.tests.test_user_api",
+        "documentation": {}
+    },
+    {
+        "label": "create_user",
+        "kind": 2,
+        "importPath": "app.user.tests.test_user_api",
+        "description": "app.user.tests.test_user_api",
+        "peekOfCode": "def create_user(**params):\n    \"\"\"Create and return a new user.\"\"\"\n    return get_user_model().objects.create_user(**params)\nclass PublicUserApiTests(TestCase):\n    \"\"\"Test the public features of the user API.\"\"\"\n    def setUp(self):\n        self.client = APIClient()\n    def test_create_user_success(self):\n        \"\"\"Test creating a user is successful.\"\"\"\n        payload = {",
+        "detail": "app.user.tests.test_user_api",
+        "documentation": {}
+    },
+    {
+        "label": "CREATE_USER_URL",
+        "kind": 5,
+        "importPath": "app.user.tests.test_user_api",
+        "description": "app.user.tests.test_user_api",
+        "peekOfCode": "CREATE_USER_URL = reverse('user:create')\ndef create_user(**params):\n    \"\"\"Create and return a new user.\"\"\"\n    return get_user_model().objects.create_user(**params)\nclass PublicUserApiTests(TestCase):\n    \"\"\"Test the public features of the user API.\"\"\"\n    def setUp(self):\n        self.client = APIClient()\n    def test_create_user_success(self):\n        \"\"\"Test creating a user is successful.\"\"\"",
+        "detail": "app.user.tests.test_user_api",
+        "documentation": {}
+    },
+    {
         "label": "UserConfig",
         "kind": 6,
         "importPath": "app.user.apps",
         "description": "app.user.apps",
         "peekOfCode": "class UserConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'user'",
         "detail": "app.user.apps",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "kind": 6,
+        "importPath": "app.user.serializer",
+        "description": "app.user.serializer",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = get_user_model\n        fields=['email','password','name']\n        extra_kwargs={'password': { \n            'write_only':True,\n            'min_lenght':5\n            }\n        }\n    def create(self,validated_data):",
+        "detail": "app.user.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "CreateUserView",
+        "kind": 6,
+        "importPath": "app.user.views",
+        "description": "app.user.views",
+        "peekOfCode": "class CreateUserView(generics.CreateAPIView):\n    serializer_class=UserSerializer",
+        "detail": "app.user.views",
         "documentation": {}
     },
     {
