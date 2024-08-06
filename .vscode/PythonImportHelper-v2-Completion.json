@@ -33,6 +33,22 @@
         "documentation": {}
     },
     {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "SimpleTestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -57,6 +73,31 @@
         "documentation": {}
     },
     {
+        "label": "SpectacularAPIView",
+        "importPath": "drf_spectacular.views",
+        "description": "drf_spectacular.views",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.views",
+        "documentation": {}
+    },
+    {
+        "label": "SpectacularSwaggerView",
+        "importPath": "drf_spectacular.views",
+        "description": "drf_spectacular.views",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.views",
+        "documentation": {}
+    },
+    {
+        "label": "django.contrib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -78,6 +119,46 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -162,6 +243,22 @@
         "documentation": {}
     },
     {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
         "label": "patch",
         "importPath": "unittest.mock",
         "description": "unittest.mock",
@@ -178,11 +275,27 @@
         "documentation": {}
     },
     {
-        "label": "get_user_model",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
+        "label": "UserAdmin",
+        "importPath": "django.contrib.auth.admin",
+        "description": "django.contrib.auth.admin",
         "isExtraImport": true,
-        "detail": "django.contrib.auth",
+        "detail": "django.contrib.auth.admin",
+        "documentation": {}
+    },
+    {
+        "label": "gettext_lazy",
+        "importPath": "django.utils.translation",
+        "description": "django.utils.translation",
+        "isExtraImport": true,
+        "detail": "django.utils.translation",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -200,14 +313,6 @@
         "importPath": "uuid",
         "description": "uuid",
         "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -232,6 +337,14 @@
         "description": "django.contrib.auth.models",
         "isExtraImport": true,
         "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -311,7 +424,7 @@
         "kind": 5,
         "importPath": "app.app.settings",
         "description": "app.app.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'core',\n]\nMIDDLEWARE = [",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'core',\n    'rest_framework',\n    'drf_spectacular',",
         "detail": "app.app.settings",
         "documentation": {}
     },
@@ -401,7 +514,7 @@
         "kind": 5,
         "importPath": "app.app.settings",
         "description": "app.app.settings",
-        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'core.User'",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'core.User'\nREST_FRAMEWORK={",
         "detail": "app.app.settings",
         "documentation": {}
     },
@@ -410,7 +523,7 @@
         "kind": 5,
         "importPath": "app.app.settings",
         "description": "app.app.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'core.User'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'core.User'\nREST_FRAMEWORK={\n    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'",
         "detail": "app.app.settings",
         "documentation": {}
     },
@@ -419,7 +532,7 @@
         "kind": 5,
         "importPath": "app.app.settings",
         "description": "app.app.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'core.User'",
+        "peekOfCode": "STATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'core.User'\nREST_FRAMEWORK={\n    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'\n}",
         "detail": "app.app.settings",
         "documentation": {}
     },
@@ -428,7 +541,7 @@
         "kind": 5,
         "importPath": "app.app.settings",
         "description": "app.app.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'core.User'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'core.User'\nREST_FRAMEWORK={\n    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'\n}",
         "detail": "app.app.settings",
         "documentation": {}
     },
@@ -437,7 +550,7 @@
         "kind": 5,
         "importPath": "app.app.settings",
         "description": "app.app.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'core.User'",
+        "peekOfCode": "AUTH_USER_MODEL = 'core.User'\nREST_FRAMEWORK={\n    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'\n}",
         "detail": "app.app.settings",
         "documentation": {}
     },
@@ -455,7 +568,7 @@
         "kind": 5,
         "importPath": "app.app.urls",
         "description": "app.app.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),\n    path(\n        'api/docs/',\n        SpectacularSwaggerView.as_view(url_name='api-schema'),\n        name='api-docs',\n    ),\n]",
         "detail": "app.app.urls",
         "documentation": {}
     },
@@ -487,6 +600,15 @@
         "documentation": {}
     },
     {
+        "label": "AdminSiteTests",
+        "kind": 6,
+        "importPath": "app.core.tests.test_admin",
+        "description": "app.core.tests.test_admin",
+        "peekOfCode": "class AdminSiteTests(TestCase):\n    def setUp(self):\n        self.client = Client()\n        self.admin_user = get_user_model().objects.create_superuser(\n            email=\"admin@example.com\",\n            password=\"testpass123\"\n        )\n        self.client.force_login(self.admin_user)\n        self.user= get_user_model().objects.create_user(\n            email='user@example.com',",
+        "detail": "app.core.tests.test_admin",
+        "documentation": {}
+    },
+    {
         "label": "CommandTests",
         "kind": 6,
         "importPath": "app.core.tests.test_commands",
@@ -505,6 +627,15 @@
         "documentation": {}
     },
     {
+        "label": "UserAdmin",
+        "kind": 6,
+        "importPath": "app.core.admin",
+        "description": "app.core.admin",
+        "peekOfCode": "class UserAdmin(BaseUserAdmin):\n    ordering=['id']\n    list_display=['email','name']\n    fieldsets = (\n        (None, {'fields': ('email', 'password')}),\n        (_('Personal Info'), {'fields': ('name',)}),\n        (\n            _('Permissions'),\n            {\n                'fields': (",
+        "detail": "app.core.admin",
+        "documentation": {}
+    },
+    {
         "label": "CoreConfig",
         "kind": 6,
         "importPath": "app.core.apps",
@@ -518,7 +649,7 @@
         "kind": 6,
         "importPath": "app.core.models",
         "description": "app.core.models",
-        "peekOfCode": "class UserManager(BaseUserManager):\n    def create_user(self,email,password=None, **extrafield):\n        if not email:\n            raise ValueError('User must have an email address')\n        user = self.model(email=self.normalize_email(email),**extrafield)\n        user.set_password(password)\n        user.save(using=self._db)\n        return user    \nclass User(AbstractBaseUser, PermissionsMixin):\n    email = models.EmailField(max_length=255, unique=True)",
+        "peekOfCode": "class UserManager(BaseUserManager):\n    def create_user(self,email,password=None, **extrafield):\n        if not email:\n            raise ValueError('User must have an email address')\n        user = self.model(email=self.normalize_email(email),**extrafield)\n        user.set_password(password)\n        user.save(using=self._db)\n        return user    \n    def create_superuser(self, email, password):\n        user = self.create_user(email, password)",
         "detail": "app.core.models",
         "documentation": {}
     },
@@ -529,6 +660,15 @@
         "description": "app.core.models",
         "peekOfCode": "class User(AbstractBaseUser, PermissionsMixin):\n    email = models.EmailField(max_length=255, unique=True)\n    name = models.CharField(max_length=255)\n    is_active = models.BooleanField(default=True)\n    is_staff = models.BooleanField(default=False)\n    objects=UserManager()\n    USERNAME_FIELD = 'email'",
         "detail": "app.core.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserConfig",
+        "kind": 6,
+        "importPath": "app.user.apps",
+        "description": "app.user.apps",
+        "peekOfCode": "class UserConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'user'",
+        "detail": "app.user.apps",
         "documentation": {}
     },
     {

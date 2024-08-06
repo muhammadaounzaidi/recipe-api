@@ -1,6 +1,5 @@
 import uuid
 import os
-
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import (
@@ -19,7 +18,13 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user    
     
+    def create_superuser(self, email, password):
+        user = self.create_user(email, password)
+        user.is_staff = True
+        user.is_superuser = True
+        user.save(using=self._db)
 
+        return user
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
