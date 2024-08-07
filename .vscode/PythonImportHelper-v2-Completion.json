@@ -299,6 +299,14 @@
         "documentation": {}
     },
     {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
         "label": "patch",
         "importPath": "unittest.mock",
         "description": "unittest.mock",
@@ -320,6 +328,14 @@
         "description": "django.contrib.auth.admin",
         "isExtraImport": true,
         "detail": "django.contrib.auth.admin",
+        "documentation": {}
+    },
+    {
+        "label": "gettext_lazy",
+        "importPath": "django.utils.translation",
+        "description": "django.utils.translation",
+        "isExtraImport": true,
+        "detail": "django.utils.translation",
         "documentation": {}
     },
     {
@@ -436,6 +452,22 @@
         "documentation": {}
     },
     {
+        "label": "AuthTokenSerializers",
+        "importPath": "user.serializer",
+        "description": "user.serializer",
+        "isExtraImport": true,
+        "detail": "user.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "ObtainAuthToken",
+        "importPath": "rest_framework.authtoken.views",
+        "description": "rest_framework.authtoken.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.views",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -512,7 +544,7 @@
         "kind": 5,
         "importPath": "app.app.settings",
         "description": "app.app.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'core',\n    'rest_framework',\n    'drf_spectacular',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'core',\n    'rest_framework',\n    'rest_framework.authtoken',",
         "detail": "app.app.settings",
         "documentation": {}
     },
@@ -773,7 +805,7 @@
         "kind": 5,
         "importPath": "app.user.tests.test_user_api",
         "description": "app.user.tests.test_user_api",
-        "peekOfCode": "CREATE_USER_URL = reverse('user:create')\ndef create_user(**params):\n    \"\"\"Create and return a new user.\"\"\"\n    return get_user_model().objects.create_user(**params)\nclass PublicUserApiTests(TestCase):\n    \"\"\"Test the public features of the user API.\"\"\"\n    def setUp(self):\n        self.client = APIClient()\n    def test_create_user_success(self):\n        \"\"\"Test creating a user is successful.\"\"\"",
+        "peekOfCode": "CREATE_USER_URL = reverse('user:create')\nTOKEN_URL=reverse('user:token')\ndef create_user(**params):\n    \"\"\"Create and return a new user.\"\"\"\n    return get_user_model().objects.create_user(**params)\nclass PublicUserApiTests(TestCase):\n    \"\"\"Test the public features of the user API.\"\"\"\n    def setUp(self):\n        self.client = APIClient()\n    def test_create_user_success(self):",
         "detail": "app.user.tests.test_user_api",
         "documentation": {}
     },
@@ -791,7 +823,16 @@
         "kind": 6,
         "importPath": "app.user.serializer",
         "description": "app.user.serializer",
-        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = get_user_model\n        fields=['email','password','name']\n        extra_kwargs={'password': { \n            'write_only':True,\n            'min_lenght':5\n            }\n        }\n    def create(self,validated_data):",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = get_user_model()\n        fields=['email','password','name']\n        extra_kwargs = {'password': {'write_only': True, 'min_length': 5}}\n    def create(self,validated_data):\n        return get_user_model().objects.create_user(**validated_data)\nclass AuthTokenSerializers(serializers.Serializer):\n    email= serializers.EmailField()\n    password= serializers.CharField(",
+        "detail": "app.user.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "AuthTokenSerializers",
+        "kind": 6,
+        "importPath": "app.user.serializer",
+        "description": "app.user.serializer",
+        "peekOfCode": "class AuthTokenSerializers(serializers.Serializer):\n    email= serializers.EmailField()\n    password= serializers.CharField(\n        style={'input_type':'password'},\n        trim_whitespace=False\n    )\n    def validate(self, attrs):\n        \"\"\"Validate and authenticate the user.\"\"\"\n        email = attrs.get('email')\n        password = attrs.get('password')",
         "detail": "app.user.serializer",
         "documentation": {}
     },
@@ -800,7 +841,16 @@
         "kind": 6,
         "importPath": "app.user.views",
         "description": "app.user.views",
-        "peekOfCode": "class CreateUserView(generics.CreateAPIView):\n    serializer_class=UserSerializer",
+        "peekOfCode": "class CreateUserView(generics.CreateAPIView):\n    serializer_class=UserSerializer\nclass CreateTokenView(ObtainAuthToken):\n    serializer_class=AuthTokenSerializers",
+        "detail": "app.user.views",
+        "documentation": {}
+    },
+    {
+        "label": "CreateTokenView",
+        "kind": 6,
+        "importPath": "app.user.views",
+        "description": "app.user.views",
+        "peekOfCode": "class CreateTokenView(ObtainAuthToken):\n    serializer_class=AuthTokenSerializers",
         "detail": "app.user.views",
         "documentation": {}
     },
